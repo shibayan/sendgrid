@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 
 using SendGrid.Internal;
+using SendGrid.WebApi.Models;
 
 namespace SendGrid.WebApi
 {
@@ -11,17 +12,17 @@ namespace SendGrid.WebApi
         {
         }
 
-        public Task<object> GetAsync(object parameters = null)
+        public Task<BlocksResult[]> GetAsync(object parameters = null)
         {
-            return GetAsync<object>("get", parameters);
+            return GetAsync<BlocksResult[]>("get", parameters);
         }
 
-        public Task DeleteAsync()
+        public Task DeleteAsync(string email)
         {
-            return PostAsync("delete", null);
+            return PostAsync("delete", new { email });
         }
 
-        public Task<int> CountAsync()
+        public Task<int> CountAsync(object parameters = null)
         {
             return GetAsync<int>("count");
         }

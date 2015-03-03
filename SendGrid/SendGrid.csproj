@@ -62,6 +62,12 @@
     <Compile Include="WebApi\Filters.cs" />
     <Compile Include="WebApi\InvalidEmails.cs" />
     <Compile Include="WebApi\Mail.cs" />
+    <Compile Include="WebApi\Models\BlocksResult.cs" />
+    <Compile Include="WebApi\Models\BouncesResult.cs" />
+    <Compile Include="WebApi\Models\InvalidEmailsResult.cs" />
+    <Compile Include="WebApi\Models\SpamReportsResult.cs" />
+    <Compile Include="WebApi\Models\TimezoneResult.cs" />
+    <Compile Include="WebApi\Models\UnsubscribesResult.cs" />
     <Compile Include="WebApi\MultipleCredentials.cs" />
     <Compile Include="WebApi\ParseWebhook.cs" />
     <Compile Include="WebApi\Profile.cs" />
@@ -72,9 +78,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WebApi\Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace SendGrid.Webhooks.Internal
 {
-    public static class HttpRequestExtension
+    internal static class HttpRequestExtension
     {
         public static string AsString(this HttpRequestBase request, string key)
         {
