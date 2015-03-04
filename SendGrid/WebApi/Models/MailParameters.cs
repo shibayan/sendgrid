@@ -4,7 +4,7 @@ using SendGrid.Internal;
 
 namespace SendGrid.WebApi.Models
 {
-    public sealed class SendMailParameter : ParameterBase
+    public class SendMailParameter : ParameterBase
     {
         public string From { get; set; }
 

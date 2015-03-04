@@ -12,7 +12,7 @@ namespace SendGrid.Tests
         static void Main(string[] args)
         {
             BlocksTest().Wait();
-
+            return;
             Console.WriteLine("=================");
 
             BouncesTest().Wait();

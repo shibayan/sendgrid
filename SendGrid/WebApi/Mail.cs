@@ -1,7 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 using SendGrid.Internal;
+using SendGrid.WebApi.Models;
 
 namespace SendGrid.WebApi
 {
@@ -12,9 +12,9 @@ namespace SendGrid.WebApi
         {
         }
 
-        public Task SendAsync()
+        public Task SendAsync(SendMailParameter parameters)
         {
-            throw new NotImplementedException();
+            return PostAsync("send", parameters);
         }
     }
 }

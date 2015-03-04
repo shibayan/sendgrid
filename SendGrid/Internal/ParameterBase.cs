@@ -1,15 +1,11 @@
-﻿using System.Net.Http;
+﻿using System.Linq;
+using System.Net.Http;
 
 namespace SendGrid.Internal
 {
     public abstract class ParameterBase
     {
         protected virtual bool UseMultipart { get { return false; } }
-
-        private string ToSnakeCase(string name)
-        {
-            return name.ToLower();
-        }
 
         internal QueryStringCollection ToQueryString()
         {
@@ -50,6 +46,11 @@ namespace SendGrid.Internal
             }
 
             return result;
+        }
+
+        private static string ToSnakeCase(string input)
+        {
+            return string.Concat(input.Select((x, i) => i > 0 && char.IsUpper(x) ? "_" + x.ToString() : x.ToString())).ToLower();
         }
     }
 }

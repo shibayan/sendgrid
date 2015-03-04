@@ -17,9 +17,9 @@ namespace SendGrid.WebApi
             return GetAsync<GetBlocksResult[]>("get", parameters);
         }
 
-        public Task DeleteAsync(string email)
+        public Task DeleteAsync(DeleteBlocksParameter parameters)
         {
-            return PostAsync("delete", new DeleteBlocksParameter { Email = email });
+            return PostAsync("delete", parameters);
         }
 
         public async Task<int> CountAsync(CountBlocksParameter parameters)
