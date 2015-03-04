@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace SendGrid.WebApi.Models
 {
-    public class BlocksResult
+    public class GetBouncesResult
     {
         [JsonProperty("status")]
         public string Status { get; set; }
@@ -17,5 +17,11 @@ namespace SendGrid.WebApi.Models
 
         [JsonProperty("email")]
         public string Email { get; set; }
+    }
+
+    public class CountBouncesResult
+    {
+        [JsonProperty("count")]
+        public int Count { get; set; }
     }
 }

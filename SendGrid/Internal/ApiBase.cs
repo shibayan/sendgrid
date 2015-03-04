@@ -22,44 +22,44 @@ namespace SendGrid.Internal
         private readonly SendGridAccount _account;
         private readonly bool _useV3;
 
-        protected Task GetAsyncCore(string requestUri)
+        protected Task GetAsyncCore(string requestUri, ParameterBase parameter)
         {
-            return GetAsyncCore<object>(requestUri);
+            return GetAsyncCore<object>(requestUri, parameter);
         }
 
-        protected Task<TResult> GetAsyncCore<TResult>(string requestUri)
+        protected Task<TResult> GetAsyncCore<TResult>(string requestUri, ParameterBase parameter)
         {
-            return ExecuteAsync<TResult>(x => x.GetAsync(requestUri));
+            return ExecuteAsync<TResult>(x => x.GetAsync(requestUri + parameter.ToQueryString()));
         }
 
-        protected Task PostAsyncCore(string requestUri, HttpContent content)
+        protected Task PostAsyncCore(string requestUri, ParameterBase parameter)
         {
-            return PostAsyncCore<object>(requestUri, content);
+            return PostAsyncCore<object>(requestUri, parameter);
         }
 
-        protected Task<TResult> PostAsyncCore<TResult>(string requestUri, HttpContent content)
+        protected Task<TResult> PostAsyncCore<TResult>(string requestUri, ParameterBase parameter)
         {
-            return ExecuteAsync<TResult>(x => x.PostAsync(requestUri, content));
+            return ExecuteAsync<TResult>(x => x.PostAsync(requestUri, parameter.ToHttpContent()));
         }
 
-        protected Task PutAsyncCore(string requestUri, HttpContent content)
+        protected Task PutAsyncCore(string requestUri, ParameterBase parameter)
         {
-            return PutAsyncCore<object>(requestUri, content);
+            return PutAsyncCore<object>(requestUri, parameter);
         }
 
-        protected Task<TResult> PutAsyncCore<TResult>(string requestUri, HttpContent content)
+        protected Task<TResult> PutAsyncCore<TResult>(string requestUri, ParameterBase parameter)
         {
-            return ExecuteAsync<TResult>(x => x.PutAsync(requestUri, content));
+            return ExecuteAsync<TResult>(x => x.PutAsync(requestUri, parameter.ToHttpContent()));
         }
 
-        protected Task DeleteAsyncCore(string requestUri)
+        protected Task DeleteAsyncCore(string requestUri, ParameterBase parameter)
         {
-            return DeleteAsyncCore<object>(requestUri);
+            return DeleteAsyncCore<object>(requestUri, parameter);
         }
 
-        protected Task<TResult> DeleteAsyncCore<TResult>(string requestUri)
+        protected Task<TResult> DeleteAsyncCore<TResult>(string requestUri, ParameterBase parameter)
         {
-            return ExecuteAsync<TResult>(x => x.DeleteAsync(requestUri));
+            return ExecuteAsync<TResult>(x => x.DeleteAsync(requestUri + parameter.ToQueryString()));
         }
 
         private async Task<TResult> ExecuteAsync<TResult>(Func<HttpClient, Task<HttpResponseMessage>> func)

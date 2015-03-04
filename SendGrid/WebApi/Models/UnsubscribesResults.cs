@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace SendGrid.WebApi.Models
 {
-    public class UnsubscribesResult
+    public class GetUnsubscribesResult
     {
         [JsonProperty("email")]
         public string Email { get; set; }

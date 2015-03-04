@@ -14,36 +14,29 @@ namespace SendGrid.Internal
 
         private const string Endpoint = "https://api.sendgrid.com/api/{0}.{1}.json";
 
-        protected Task GetAsync(string action, object parameters = null)
+        protected Task GetAsync(string action, ParameterBase parameter)
         {
-            return GetAsyncCore(FormatRequestUri(action, parameters));
+            return GetAsyncCore(FormatRequestUri(action), parameter);
         }
 
-        protected Task<TResult> GetAsync<TResult>(string action, object parameters = null)
+        protected Task<TResult> GetAsync<TResult>(string action, ParameterBase parameter)
         {
-            return GetAsyncCore<TResult>(FormatRequestUri(action, parameters));
+            return GetAsyncCore<TResult>(FormatRequestUri(action), parameter);
         }
 
-        protected Task PostAsync(string action, object parameters)
+        protected Task PostAsync(string action, ParameterBase parameter)
         {
-            return PostAsyncCore(FormatRequestUri(action), null);
+            return PostAsyncCore(FormatRequestUri(action), parameter);
         }
 
-        protected Task<TResult> PostAsync<TResult>(string action, object parameters)
+        protected Task<TResult> PostAsync<TResult>(string action, ParameterBase parameter)
         {
-            return PostAsyncCore<TResult>(FormatRequestUri(action), null);
+            return PostAsyncCore<TResult>(FormatRequestUri(action), parameter);
         }
 
-        private string FormatRequestUri(string action, object parameters = null)
+        private string FormatRequestUri(string action)
         {
-            var url = string.Format(Endpoint, _module, action);
-
-            if (parameters != null)
-            {
-                url += "?" + new QueryStringCollection(parameters);
-            }
-
-            return url;
+            return string.Format(Endpoint, _module, action);
         }
     }
 }

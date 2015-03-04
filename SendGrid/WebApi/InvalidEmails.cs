@@ -12,19 +12,19 @@ namespace SendGrid.WebApi
         {
         }
 
-        public Task<InvalidEmailsResult[]> GetAsync(object parameters = null)
+        public Task<GetInvalidEmailsResult[]> GetAsync(GetInvalidEmailsParameter parameters)
         {
-            return GetAsync<InvalidEmailsResult[]>("get", parameters);
+            return GetAsync<GetInvalidEmailsResult[]>("get", parameters);
         }
 
-        public Task DeleteAsync(string email)
+        public Task DeleteAsync(DeleteInvalidEmailsParameter parameters)
         {
-            return PostAsync("delete", new { email });
+            return PostAsync("delete", parameters);
         }
 
-        public Task<int> CountAsync()
+        public async Task<int> CountAsync(CountInvalidEmailsParameter parameters)
         {
-            return GetAsync<int>("count");
+            return (await GetAsync<CountInvalidEmailsResult>("count", parameters)).Count;
         }
     }
 }

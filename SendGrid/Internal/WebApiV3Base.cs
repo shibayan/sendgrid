@@ -13,12 +13,12 @@ namespace SendGrid.Internal
 
         protected Task GetAsync(string path, object parameters = null)
         {
-            return GetAsyncCore(FormatRequestUri(path, parameters));
+            return GetAsyncCore(FormatRequestUri(path), null);
         }
 
         protected Task<TResult> GetAsync<TResult>(string path, object parameters = null)
         {
-            return GetAsyncCore<TResult>(FormatRequestUri(path, parameters));
+            return GetAsyncCore<TResult>(FormatRequestUri(path), null);
         }
 
         protected Task PostAsync(string path, object parameters)
@@ -31,16 +31,9 @@ namespace SendGrid.Internal
             return PostAsyncCore<TResult>(FormatRequestUri(path), null);
         }
 
-        private string FormatRequestUri(string path, object parameters = null)
+        private string FormatRequestUri(string path)
         {
-            var requestUri = string.Format(Endpoint, path.TrimStart('/'));
-
-            if (parameters != null)
-            {
-                requestUri += "?" + new QueryStringCollection(parameters);
-            }
-
-            return requestUri;
+            return string.Format(Endpoint, path.TrimStart('/'));
         }
     }
 }

@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace SendGrid.WebApi.Models
 {
-    public class SpamReportsResult
+    public class GetSpamReportsResult
     {
         [JsonProperty("ip")]
         public string Ip { get; set; }
@@ -14,5 +14,11 @@ namespace SendGrid.WebApi.Models
 
         [JsonProperty("created")]
         public DateTime Created { get; set; }
+    }
+
+    public class CountSpamReportsResult
+    {
+        [JsonProperty("count")]
+        public int Count { get; set; }
     }
 }

@@ -3,6 +3,8 @@ using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 
+using SendGrid.WebApi.Models;
+
 namespace SendGrid.Tests
 {
     class Program
@@ -25,7 +27,7 @@ namespace SendGrid.Tests
 
             Console.WriteLine("=================");
 
-            UnsubscribesTest().Wait();
+            //UnsubscribesTest().Wait();
 
             Console.ReadKey();
         }
@@ -34,12 +36,12 @@ namespace SendGrid.Tests
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.Blocks.GetAsync(new
+            var result = await account.Blocks.GetAsync(new GetBlocksParameter
             {
-                days = 1
+                Limit = 10
             });
 
-            foreach (var item in result.Take(5))
+            foreach (var item in result)
             {
                 Console.WriteLine(item.Reason);
             }
@@ -49,9 +51,9 @@ namespace SendGrid.Tests
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.Bounces.GetAsync(new
+            var result = await account.Bounces.GetAsync(new GetBouncesParameter
             {
-                days = 1
+                Days = 1
             });
 
             foreach (var item in result.Take(5))
@@ -64,9 +66,9 @@ namespace SendGrid.Tests
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.InvalidEmails.GetAsync(new
+            var result = await account.InvalidEmails.GetAsync(new GetInvalidEmailsParameter
             {
-                days = 10
+                Days = 10
             });
 
             foreach (var item in result.Take(5))
@@ -79,9 +81,9 @@ namespace SendGrid.Tests
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.SpamReports.GetAsync(new
+            var result = await account.SpamReports.GetAsync(new GetSpamReportsParameter
             {
-                days = 10
+                Days = 10
             });
 
             foreach (var item in result.Take(5))
@@ -94,14 +96,17 @@ namespace SendGrid.Tests
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.Unsubscribes.GetAsync(new
+            var result = await account.Unsubscribes.GetAsync(new GetUnsubscribesParameter
             {
-                days = 10
+                Days = 10
             });
 
-            await Task.WhenAll(result.Take(5).Select(x => account.Unsubscribes.DeleteAsync(x.Email)));
+            await Task.WhenAll(result.Take(5).Select(x => account.Unsubscribes.DeleteAsync(new DeleteUnsubscribesParameter { Email = x.Email })));
 
-            await account.Unsubscribes.AddAsync("hoge@example.com");
+            await account.Unsubscribes.AddAsync(new AddUnsubscribesParameter
+            {
+                Email = "hoge@example.com"
+            });
         }
     }
 }

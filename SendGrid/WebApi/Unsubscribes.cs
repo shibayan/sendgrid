@@ -12,19 +12,19 @@ namespace SendGrid.WebApi
         {
         }
 
-        public Task<UnsubscribesResult[]> GetAsync(object parameters = null)
+        public Task<GetUnsubscribesResult[]> GetAsync(GetUnsubscribesParameter parameters)
         {
-            return GetAsync<UnsubscribesResult[]>("get", parameters);
+            return GetAsync<GetUnsubscribesResult[]>("get", parameters);
         }
 
-        public Task DeleteAsync(string email)
+        public Task DeleteAsync(DeleteUnsubscribesParameter parameters)
         {
-            return PostAsync("delete", new { email });
+            return PostAsync("delete", parameters);
         }
 
-        public Task AddAsync(string email)
+        public Task AddAsync(AddUnsubscribesParameter parameters)
         {
-            return PostAsync("add", new { email });
+            return PostAsync("add", parameters);
         }
     }
 }
