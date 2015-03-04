@@ -29,7 +29,7 @@ namespace SendGrid.Internal
 
         protected Task<TResult> GetAsyncCore<TResult>(string requestUri, ParameterBase parameter)
         {
-            return ExecuteAsync<TResult>(x => x.GetAsync(requestUri + parameter.ToQueryString()));
+            return ExecuteAsync<TResult>(x => x.GetAsync(parameter == null ? requestUri : requestUri + parameter.ToQueryString()));
         }
 
         protected Task PostAsyncCore(string requestUri, ParameterBase parameter)
@@ -59,7 +59,7 @@ namespace SendGrid.Internal
 
         protected Task<TResult> DeleteAsyncCore<TResult>(string requestUri, ParameterBase parameter)
         {
-            return ExecuteAsync<TResult>(x => x.DeleteAsync(requestUri + parameter.ToQueryString()));
+            return ExecuteAsync<TResult>(x => x.DeleteAsync(parameter == null ? requestUri : requestUri + parameter.ToQueryString()));
         }
 
         private async Task<TResult> ExecuteAsync<TResult>(Func<HttpClient, Task<HttpResponseMessage>> func)

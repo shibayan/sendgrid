@@ -63,6 +63,8 @@
     <Compile Include="WebApi\Filters.cs" />
     <Compile Include="WebApi\InvalidEmails.cs" />
     <Compile Include="WebApi\Mail.cs" />
+    <Compile Include="WebApi\Models\ParseWebhookParameters.cs" />
+    <Compile Include="WebApi\Models\ParseWebhookResults.cs" />
     <Compile Include="WebApi\Models\SpamReportsParameters.cs" />
     <Compile Include="WebApi\Models\InvalidEmailsParameters.cs" />
     <Compile Include="WebApi\Models\UnsubscribesParameters.cs" />
@@ -71,7 +73,7 @@
     <Compile Include="WebApi\Models\BouncesParameters.cs" />
     <Compile Include="WebApi\Models\BouncesResults.cs" />
     <Compile Include="WebApi\Models\InvalidEmailsResults.cs" />
-    <Compile Include="WebApi\Models\MailParameter.cs" />
+    <Compile Include="WebApi\Models\MailParameters.cs" />
     <Compile Include="WebApi\Models\SpamReportsResults.cs" />
     <Compile Include="WebApi\Models\TimezoneResult.cs" />
     <Compile Include="WebApi\Models\UnsubscribesResults.cs" />
