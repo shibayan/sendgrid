@@ -29,7 +29,7 @@ var sendMail = new SendMailParameter
 {
     From = "from@example.com",
     Text = "text content",
-    Html = "<p>html content</p>
+    Html = "<p>html content</p>"
 };
 
 sendMail.To.Add("to@example.com");
