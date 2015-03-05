@@ -74,6 +74,11 @@ namespace SendGrid
             get { return new Bounces(this); }
         }
 
+        public Credentials Credentials
+        {
+            get { return new Credentials(this); }
+        }
+
         public Filters Filters
         {
             get { return new Filters(this); }
@@ -87,11 +92,6 @@ namespace SendGrid
         public Mail Mail
         {
             get { return new Mail(this); }
-        }
-
-        public MultipleCredentials MultipleCredentials
-        {
-            get { return new MultipleCredentials(this); }
         }
 
         public ParseWebhook ParseWebhook

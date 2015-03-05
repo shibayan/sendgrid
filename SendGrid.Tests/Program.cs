@@ -11,8 +11,7 @@ namespace SendGrid.Tests
     {
         static void Main(string[] args)
         {
-            TimezoneTest().Wait();
-
+            CredentialsTest().Wait();
             return;
 
             BlocksTest().Wait();
@@ -32,6 +31,8 @@ namespace SendGrid.Tests
             ProfileTest().Wait();
 
             SpamReportsTest().Wait();
+
+            TimezoneTest().Wait();
 
             Console.WriteLine("=================");
 
@@ -67,6 +68,18 @@ namespace SendGrid.Tests
             foreach (var item in result.Take(5))
             {
                 Console.WriteLine(item.Reason);
+            }
+        }
+
+        private static async Task CredentialsTest()
+        {
+            var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
+
+            var result = await account.Credentials.GetAsync(new GetCredentialsParameter());
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.Name);
             }
         }
 
