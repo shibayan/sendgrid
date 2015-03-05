@@ -15,12 +15,19 @@ namespace SendGrid.Internal
 
         internal ApiBase(SendGridAccount account, bool useV3)
         {
+            if (account == null)
+            {
+                throw new ArgumentNullException("account");
+            }
+
             _account = account;
             _useV3 = useV3;
         }
 
         private readonly SendGridAccount _account;
         private readonly bool _useV3;
+
+        #region REST Methods
 
         protected Task GetAsyncCore(string requestUri, ParameterBase parameter)
         {
@@ -29,7 +36,17 @@ namespace SendGrid.Internal
 
         protected Task<TResult> GetAsyncCore<TResult>(string requestUri, ParameterBase parameter)
         {
-            return ExecuteAsync<TResult>(x => x.GetAsync(parameter == null ? requestUri : requestUri + parameter.ToQueryString()));
+            if (requestUri == null)
+            {
+                throw new ArgumentNullException("requestUri");
+            }
+
+            if (parameter == null)
+            {
+                throw new ArgumentNullException("parameter");
+            }
+
+            return ExecuteAsync<TResult>(x => x.GetAsync(requestUri + parameter.ToQueryString()));
         }
 
         protected Task PostAsyncCore(string requestUri, ParameterBase parameter)
@@ -39,6 +56,16 @@ namespace SendGrid.Internal
 
         protected Task<TResult> PostAsyncCore<TResult>(string requestUri, ParameterBase parameter)
         {
+            if (requestUri == null)
+            {
+                throw new ArgumentNullException("requestUri");
+            }
+
+            if (parameter == null)
+            {
+                throw new ArgumentNullException("parameter");
+            }
+
             return ExecuteAsync<TResult>(x => x.PostAsync(requestUri, parameter.ToHttpContent()));
         }
 
@@ -49,6 +76,16 @@ namespace SendGrid.Internal
 
         protected Task<TResult> PutAsyncCore<TResult>(string requestUri, ParameterBase parameter)
         {
+            if (requestUri == null)
+            {
+                throw new ArgumentNullException("requestUri");
+            }
+
+            if (parameter == null)
+            {
+                throw new ArgumentNullException("parameter");
+            }
+
             return ExecuteAsync<TResult>(x => x.PutAsync(requestUri, parameter.ToHttpContent()));
         }
 
@@ -59,8 +96,20 @@ namespace SendGrid.Internal
 
         protected Task<TResult> DeleteAsyncCore<TResult>(string requestUri, ParameterBase parameter)
         {
-            return ExecuteAsync<TResult>(x => x.DeleteAsync(parameter == null ? requestUri : requestUri + parameter.ToQueryString()));
+            if (requestUri == null)
+            {
+                throw new ArgumentNullException("requestUri");
+            }
+
+            if (parameter == null)
+            {
+                throw new ArgumentNullException("parameter");
+            }
+
+            return ExecuteAsync<TResult>(x => x.DeleteAsync(requestUri + parameter.ToQueryString()));
         }
+
+        #endregion
 
         private async Task<TResult> ExecuteAsync<TResult>(Func<HttpClient, Task<HttpResponseMessage>> func)
         {

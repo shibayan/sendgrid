@@ -14,12 +14,12 @@ namespace SendGrid.Internal
 
         private const string Endpoint = "https://api.sendgrid.com/api/{0}.{1}.json";
 
-        protected Task GetAsync(string action, ParameterBase parameter = null)
+        protected Task GetAsync(string action, ParameterBase parameter)
         {
             return GetAsyncCore(FormatRequestUri(action), parameter);
         }
 
-        protected Task<TResult> GetAsync<TResult>(string action, ParameterBase parameter = null)
+        protected Task<TResult> GetAsync<TResult>(string action, ParameterBase parameter)
         {
             return GetAsyncCore<TResult>(FormatRequestUri(action), parameter);
         }

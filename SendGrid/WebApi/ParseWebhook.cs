@@ -14,7 +14,7 @@ namespace SendGrid.WebApi
 
         public async Task<GetParseWebhookResult[]> GetAsync()
         {
-            return (await GetAsync<GetParseWebhookResultList>("get")).Parse;
+            return (await GetAsync<GetParseWebhookResultList>("get", new EmptyParameter())).Parse;
         }
 
         public Task SetAsync(SetParseWebhookParameter parameters)

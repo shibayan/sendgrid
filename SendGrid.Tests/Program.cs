@@ -11,8 +11,11 @@ namespace SendGrid.Tests
     {
         static void Main(string[] args)
         {
-            BlocksTest().Wait();
+            ProfileTest().Wait();
             return;
+
+            BlocksTest().Wait();
+
             Console.WriteLine("=================");
 
             BouncesTest().Wait();
@@ -22,6 +25,8 @@ namespace SendGrid.Tests
             InvalidEmailsTest().Wait();
 
             Console.WriteLine("=================");
+
+            ParseWebhookTest().Wait();
 
             SpamReportsTest().Wait();
 
@@ -75,6 +80,25 @@ namespace SendGrid.Tests
             {
                 Console.WriteLine(item.Reason);
             }
+        }
+
+        private static async Task ParseWebhookTest()
+        {
+            var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
+
+            var result = await account.ParseWebhook.GetAsync();
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.Hostname);
+            }
+        }
+
+        private static async Task ProfileTest()
+        {
+            var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
+
+            var result = await account.Profile.GetAsync();
         }
 
         private static async Task SpamReportsTest()

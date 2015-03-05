@@ -1,7 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 using SendGrid.Internal;
+using SendGrid.WebApi.Models;
 
 namespace SendGrid.WebApi
 {
@@ -12,29 +12,29 @@ namespace SendGrid.WebApi
         {
         }
 
-        public Task<object> GetAsync()
+        public Task<GetProfileResult[]> GetAsync()
         {
-            throw new NotImplementedException();
+            return GetAsync<GetProfileResult[]>("get", new EmptyParameter());
         }
 
-        public Task SetAsync()
+        public Task SetAsync(SetProfileParameter parameter)
         {
-            throw new NotImplementedException();
+            return PostAsync("set", parameter);
         }
 
-        public Task SetPasswordAsync()
+        public Task SetPasswordAsync(SetPasswordProfileParameter parameter)
         {
-            throw new NotImplementedException();
+            return PostAsync("setPassword", parameter);
         }
 
-        public Task SetUsernameAsync()
+        public Task SetUsernameAsync(SetUsernameProfileParameter parameter)
         {
-            throw new NotImplementedException();
+            return PostAsync("setUsername", parameter);
         }
 
-        public Task SetEmailAsync()
+        public Task SetEmailAsync(SetEmailProfileParameter parameter)
         {
-            throw new NotImplementedException();
+            return PostAsync("setEmail", parameter);
         }
     }
 }
