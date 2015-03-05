@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Internal\ApiBase.cs" />
     <Compile Include="Internal\EmptyParameter.cs" />
+    <Compile Include="Internal\HttpClientExtensions.cs" />
     <Compile Include="Internal\ParameterBase.cs" />
     <Compile Include="Internal\QueryStringCollection.cs" />
     <Compile Include="Internal\WebApiBase.cs" />
@@ -55,10 +56,11 @@
     <Compile Include="Smtp\SmtpHeaderExtensions.cs" />
     <Compile Include="WebApiV3\AdvancedSuppressionManager.cs" />
     <Compile Include="WebApiV3\Categories.cs" />
+    <Compile Include="WebApiV3\EnforcedTls.cs" />
     <Compile Include="WebApiV3\IpManagement.cs" />
+    <Compile Include="WebApiV3\Models\EnforcedTlsResults.cs" />
     <Compile Include="WebApiV3\Settings.cs" />
     <Compile Include="WebApiV3\TemplateEngine.cs" />
-    <Compile Include="WebApiV3\Webhooks.cs" />
     <Compile Include="WebApi\Blocks.cs" />
     <Compile Include="WebApi\Bounces.cs" />
     <Compile Include="WebApi\Filters.cs" />

@@ -148,11 +148,6 @@ namespace SendGrid
             get { return new TemplateEngine(this); }
         }
 
-        public Webhooks Webhooks
-        {
-            get { return new Webhooks(this); }
-        }
-
         #endregion
 
         #region Marketing Emails API

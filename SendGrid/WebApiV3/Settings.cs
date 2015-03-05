@@ -1,12 +1,17 @@
-﻿using SendGrid.Internal;
-
-namespace SendGrid.WebApiV3
+﻿namespace SendGrid.WebApiV3
 {
-    public class Settings : WebApiV3Base
+    public class Settings
     {
         internal Settings(SendGridAccount account)
-            : base(account)
         {
+            _account = account;
+        }
+
+        private readonly SendGridAccount _account;
+
+        public EnforcedTls EnforcedTls
+        {
+            get { return new EnforcedTls(_account); }
         }
     }
 }

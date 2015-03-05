@@ -109,6 +109,26 @@ namespace SendGrid.Internal
             return ExecuteAsync<TResult>(x => x.DeleteAsync(requestUri + parameter.ToQueryString()));
         }
 
+        protected Task PatchAsyncCore(string requestUri, ParameterBase parameter)
+        {
+            return PatchAsyncCore<object>(requestUri, parameter);
+        }
+
+        protected Task<TResult> PatchAsyncCore<TResult>(string requestUri, ParameterBase parameter)
+        {
+            if (requestUri == null)
+            {
+                throw new ArgumentNullException("requestUri");
+            }
+
+            if (parameter == null)
+            {
+                throw new ArgumentNullException("parameter");
+            }
+
+            return ExecuteAsync<TResult>(x => x.PatchAsync(requestUri, parameter.ToHttpContent()));
+        }
+
         #endregion
 
         private async Task<TResult> ExecuteAsync<TResult>(Func<HttpClient, Task<HttpResponseMessage>> func)

@@ -11,7 +11,8 @@ namespace SendGrid.Tests
     {
         static void Main(string[] args)
         {
-            CredentialsTest().Wait();
+            EnforcedTlsTest().Wait();
+
             return;
 
             BlocksTest().Wait();
@@ -163,6 +164,13 @@ namespace SendGrid.Tests
             {
                 Email = "hoge@example.com"
             });
+        }
+
+        private static async Task EnforcedTlsTest()
+        {
+            var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
+
+            var result = await account.Settings.EnforcedTls.GetAsync();
         }
     }
 }

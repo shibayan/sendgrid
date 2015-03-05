@@ -11,24 +11,24 @@ namespace SendGrid.Internal
 
         private const string Endpoint = "https://api.sendgrid.com/v3/{0}";
 
-        protected Task GetAsync(string path, object parameters = null)
+        protected Task GetAsync(string path, ParameterBase parameters)
         {
-            return GetAsyncCore(FormatRequestUri(path), null);
+            return GetAsyncCore(FormatRequestUri(path), parameters);
         }
 
-        protected Task<TResult> GetAsync<TResult>(string path, object parameters = null)
+        protected Task<TResult> GetAsync<TResult>(string path, ParameterBase parameters)
         {
-            return GetAsyncCore<TResult>(FormatRequestUri(path), null);
+            return GetAsyncCore<TResult>(FormatRequestUri(path), parameters);
         }
 
-        protected Task PostAsync(string path, object parameters)
+        protected Task PostAsync(string path, ParameterBase parameters)
         {
-            return PostAsyncCore(FormatRequestUri(path), null);
+            return PostAsyncCore(FormatRequestUri(path), parameters);
         }
 
-        protected Task<TResult> PostAsync<TResult>(string path, object parameters)
+        protected Task<TResult> PostAsync<TResult>(string path, ParameterBase parameters)
         {
-            return PostAsyncCore<TResult>(FormatRequestUri(path), null);
+            return PostAsyncCore<TResult>(FormatRequestUri(path), parameters);
         }
 
         private string FormatRequestUri(string path)
