@@ -31,6 +31,26 @@ namespace SendGrid.Internal
             return PostAsyncCore<TResult>(FormatRequestUri(path), parameters);
         }
 
+        protected Task DeleteAsync(string path, ParameterBase parameters)
+        {
+            return DeleteAsyncCore(FormatRequestUri(path), parameters);
+        }
+
+        protected Task<TResult> DeleteAsync<TResult>(string path, ParameterBase parameters)
+        {
+            return DeleteAsyncCore<TResult>(FormatRequestUri(path), parameters);
+        }
+
+        protected Task PatchAsync(string path, ParameterBase parameters)
+        {
+            return PatchAsyncCore(FormatRequestUri(path), parameters);
+        }
+
+        protected Task<TResult> PatchAsync<TResult>(string path, ParameterBase parameters)
+        {
+            return PatchAsyncCore<TResult>(FormatRequestUri(path), parameters);
+        }
+
         private string FormatRequestUri(string path)
         {
             return string.Format(Endpoint, path.TrimStart('/'));
