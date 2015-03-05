@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using SendGrid.Internal;
+﻿using SendGrid.Internal;
 
 namespace SendGrid.WebApi.Models
 {

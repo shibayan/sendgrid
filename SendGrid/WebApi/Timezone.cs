@@ -1,7 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 using SendGrid.Internal;
+using SendGrid.WebApi.Models;
 
 namespace SendGrid.WebApi
 {
@@ -12,19 +12,19 @@ namespace SendGrid.WebApi
         {
         }
 
-        public Task<object> GetAsync()
+        public Task<GetTimezoneResult> GetAsync()
         {
-            throw new NotImplementedException();
+            return GetAsync<GetTimezoneResult>("get", new EmptyParameter());
         }
 
-        public Task EditAsync()
+        public Task EditAsync(EditTimezoneParameter parameter)
         {
-            throw new NotImplementedException();
+            return PostAsync("edit", parameter);
         }
 
-        public Task<object> ListAsync()
+        public Task<GetTimezoneResult[]> ListAsync(ListTimezoneParameter parameter)
         {
-            throw new NotImplementedException();
+            return GetAsync<GetTimezoneResult[]>("list", parameter);
         }
     }
 }

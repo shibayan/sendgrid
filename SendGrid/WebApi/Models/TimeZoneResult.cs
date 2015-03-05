@@ -2,7 +2,7 @@
 
 namespace SendGrid.WebApi.Models
 {
-    public class TimezoneResult
+    public class GetTimezoneResult
     {
         [JsonProperty("name")]
         public string Name { get; set; }

@@ -11,7 +11,8 @@ namespace SendGrid.Tests
     {
         static void Main(string[] args)
         {
-            ProfileTest().Wait();
+            TimezoneTest().Wait();
+
             return;
 
             BlocksTest().Wait();
@@ -27,6 +28,8 @@ namespace SendGrid.Tests
             Console.WriteLine("=================");
 
             ParseWebhookTest().Wait();
+
+            ProfileTest().Wait();
 
             SpamReportsTest().Wait();
 
@@ -113,6 +116,22 @@ namespace SendGrid.Tests
             foreach (var item in result.Take(5))
             {
                 Console.WriteLine(item.Email);
+            }
+        }
+
+        private static async Task TimezoneTest()
+        {
+            var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
+
+            var result = await account.Timezone.GetAsync();
+
+            Console.WriteLine(result.Display);
+
+            var list = await account.Timezone.ListAsync(new ListTimezoneParameter());
+
+            foreach (var item in list)
+            {
+                Console.WriteLine(item.Timezone);
             }
         }
 

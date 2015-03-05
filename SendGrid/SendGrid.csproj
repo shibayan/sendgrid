@@ -70,6 +70,7 @@
     <Compile Include="WebApi\Models\ProfileResults.cs" />
     <Compile Include="WebApi\Models\SpamReportsParameters.cs" />
     <Compile Include="WebApi\Models\InvalidEmailsParameters.cs" />
+    <Compile Include="WebApi\Models\TimezoneParameters.cs" />
     <Compile Include="WebApi\Models\UnsubscribesParameters.cs" />
     <Compile Include="WebApi\Models\BlocksParameters.cs" />
     <Compile Include="WebApi\Models\BlocksResults.cs" />
