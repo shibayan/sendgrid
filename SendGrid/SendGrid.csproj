@@ -50,9 +50,15 @@
     <Compile Include="Internal\WebApiBase.cs" />
     <Compile Include="Internal\WebApiHandler.cs" />
     <Compile Include="Internal\WebApiV3Base.cs" />
+    <Compile Include="MarketingEmailsApi\Categories.cs" />
     <Compile Include="MarketingEmailsApi\Emails.cs" />
+    <Compile Include="MarketingEmailsApi\Identity.cs" />
+    <Compile Include="MarketingEmailsApi\Lists.cs" />
     <Compile Include="MarketingEmailsApi\MarketingEmails.cs" />
+    <Compile Include="MarketingEmailsApi\Recipients.cs" />
+    <Compile Include="MarketingEmailsApi\Schedule.cs" />
     <Compile Include="MarketingEmailsApi\SendGridMarketingEmailsApiClient.cs" />
+    <Compile Include="MarketingEmailsApi\Variations.cs" />
     <Compile Include="SendGridAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SendGridRequestException.cs" />
