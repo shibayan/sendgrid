@@ -11,10 +11,6 @@ namespace SendGrid.Tests
     {
         static void Main(string[] args)
         {
-            EnforcedTlsTest().Wait();
-
-            return;
-
             BlocksTest().Wait();
 
             Console.WriteLine("=================");
@@ -39,6 +35,8 @@ namespace SendGrid.Tests
 
             //UnsubscribesTest().Wait();
 
+            EnforcedTlsTest().Wait();
+
             Console.ReadKey();
         }
 
@@ -46,7 +44,9 @@ namespace SendGrid.Tests
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.Blocks.GetAsync(new GetBlocksParameter
+            var client = account.CreateWebApiClient();
+
+            var result = await client.Blocks.GetAsync(new GetBlocksParameter
             {
                 Limit = 10
             });
@@ -61,9 +61,11 @@ namespace SendGrid.Tests
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.Bounces.GetAsync(new GetBouncesParameter
+            var client = account.CreateWebApiClient();
+
+            var result = await client.Bounces.GetAsync(new GetBouncesParameter
             {
-                Days = 1
+                Days = 1,
             });
 
             foreach (var item in result.Take(5))
@@ -76,7 +78,9 @@ namespace SendGrid.Tests
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.Credentials.GetAsync(new GetCredentialsParameter());
+            var client = account.CreateWebApiClient();
+
+            var result = await client.Credentials.GetAsync(new GetCredentialsParameter());
 
             foreach (var item in result)
             {
@@ -88,7 +92,9 @@ namespace SendGrid.Tests
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.InvalidEmails.GetAsync(new GetInvalidEmailsParameter
+            var client = account.CreateWebApiClient();
+
+            var result = await client.InvalidEmails.GetAsync(new GetInvalidEmailsParameter
             {
                 Days = 10
             });
@@ -103,7 +109,9 @@ namespace SendGrid.Tests
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.ParseWebhook.GetAsync();
+            var client = account.CreateWebApiClient();
+
+            var result = await client.ParseWebhook.GetAsync();
 
             foreach (var item in result)
             {
@@ -115,14 +123,18 @@ namespace SendGrid.Tests
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.Profile.GetAsync();
+            var client = account.CreateWebApiClient();
+
+            var result = await client.Profile.GetAsync();
         }
 
         private static async Task SpamReportsTest()
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.SpamReports.GetAsync(new GetSpamReportsParameter
+            var client = account.CreateWebApiClient();
+
+            var result = await client.SpamReports.GetAsync(new GetSpamReportsParameter
             {
                 Days = 10
             });
@@ -137,11 +149,13 @@ namespace SendGrid.Tests
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.Timezone.GetAsync();
+            var client = account.CreateWebApiClient();
+
+            var result = await client.Timezone.GetAsync();
 
             Console.WriteLine(result.Display);
 
-            var list = await account.Timezone.ListAsync(new ListTimezoneParameter());
+            var list = await client.Timezone.ListAsync(new ListTimezoneParameter());
 
             foreach (var item in list)
             {
@@ -153,14 +167,16 @@ namespace SendGrid.Tests
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.Unsubscribes.GetAsync(new GetUnsubscribesParameter
+            var client = account.CreateWebApiClient();
+
+            var result = await client.Unsubscribes.GetAsync(new GetUnsubscribesParameter
             {
                 Days = 10
             });
 
-            await Task.WhenAll(result.Take(5).Select(x => account.Unsubscribes.DeleteAsync(new DeleteUnsubscribesParameter { Email = x.Email })));
+            await Task.WhenAll(result.Take(5).Select(x => client.Unsubscribes.DeleteAsync(new DeleteUnsubscribesParameter { Email = x.Email })));
 
-            await account.Unsubscribes.AddAsync(new AddUnsubscribesParameter
+            await client.Unsubscribes.AddAsync(new AddUnsubscribesParameter
             {
                 Email = "hoge@example.com"
             });
@@ -170,7 +186,9 @@ namespace SendGrid.Tests
         {
             var account = SendGridAccount.Parse(ConfigurationManager.ConnectionStrings["SendGrid"].ConnectionString);
 
-            var result = await account.Settings.EnforcedTls.GetAsync();
+            var client = account.CreateWebApiV3Client();
+
+            var result = await client.Settings.EnforcedTls.GetAsync();
         }
     }
 }

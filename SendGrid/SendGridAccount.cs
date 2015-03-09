@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
+using SendGrid.MarketingEmailsApi;
 using SendGrid.WebApi;
 using SendGrid.WebApiV3;
 
@@ -62,101 +63,19 @@ namespace SendGrid
 
         #endregion
 
-        #region Web API
-
-        public Blocks Blocks
+        public SendGridWebApiClient CreateWebApiClient()
         {
-            get { return new Blocks(this); }
+            return new SendGridWebApiClient(this);
         }
 
-        public Bounces Bounces
+        public SendGridWebApiV3Client CreateWebApiV3Client()
         {
-            get { return new Bounces(this); }
+            return new SendGridWebApiV3Client(this);
         }
 
-        public Credentials Credentials
+        public SendGridMarketingEmailsApiClient CreateMarketingEmailsApiClient()
         {
-            get { return new Credentials(this); }
+            return new SendGridMarketingEmailsApiClient(this);
         }
-
-        public Filters Filters
-        {
-            get { return new Filters(this); }
-        }
-
-        public InvalidEmails InvalidEmails
-        {
-            get { return new InvalidEmails(this); }
-        }
-
-        public Mail Mail
-        {
-            get { return new Mail(this); }
-        }
-
-        public ParseWebhook ParseWebhook
-        {
-            get { return new ParseWebhook(this); }
-        }
-
-        public Profile Profile
-        {
-            get { return new Profile(this); }
-        }
-
-        public SpamReports SpamReports
-        {
-            get { return new SpamReports(this); }
-        }
-
-        public Timezone Timezone
-        {
-            get { return new Timezone(this); }
-        }
-
-        public Unsubscribes Unsubscribes
-        {
-            get { return new Unsubscribes(this); }
-        }
-
-        #endregion
-
-        #region Web API v3
-
-        public AdvancedSuppressionManager AdvancedSuppressionManage
-        {
-            get { return new AdvancedSuppressionManager(this); }
-        }
-
-        public Categories Categories
-        {
-            get { return new Categories(this); }
-        }
-
-        public IpManagement IpManagement
-        {
-            get { return new IpManagement(this); }
-        }
-
-        public Settings Settings
-        {
-            get { return new Settings(this); }
-        }
-
-        public TemplateEngine TemplateEngine
-        {
-            get { return new TemplateEngine(this); }
-        }
-
-        #endregion
-
-        #region Marketing Emails API
-
-        public object MarketingEmails
-        {
-            get { return null; }
-        }
-
-        #endregion
     }
 }

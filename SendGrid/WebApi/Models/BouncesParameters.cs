@@ -16,7 +16,7 @@ namespace SendGrid.WebApi.Models
 
         public int? Offset { get; set; }
 
-        public int Type { get; set; }
+        public int? Type { get; set; }
 
         public string Email { get; set; }
     }

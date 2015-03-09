@@ -6,7 +6,7 @@ namespace SendGrid.MarketingEmailsApi
 {
     public class MarketingEmails : MarketingEmailsApiBase
     {
-        protected MarketingEmails(SendGridAccount account)
+        internal MarketingEmails(SendGridAccount account)
             : base(account)
         {
         }
