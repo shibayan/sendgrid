@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 
 using SendGrid.Internal;
+using SendGrid.MarketingEmailsApi.Models;
 
 namespace SendGrid.MarketingEmailsApi
 {
@@ -11,24 +12,24 @@ namespace SendGrid.MarketingEmailsApi
         {
         }
 
-        public Task AddAsync()
+        public Task AddAsync(AddEmailsParameter parameter)
         {
-            return PostAsync("add", new EmptyParameter());
+            return PostAsync("add", parameter);
         }
 
-        public Task GetAsync()
+        public Task GetAsync(GetEmailsParameter parameter)
         {
-            return GetAsync("get", new EmptyParameter());
+            return GetAsync("get", parameter);
         }
 
-        public Task CountAsync()
+        public Task CountAsync(CountEmailsParameter parameter)
         {
-            return GetAsync("count", new EmptyParameter());
+            return GetAsync("count", parameter);
         }
 
-        public Task DeleteAsync()
+        public Task DeleteAsync(DeleteEmailsParameter parameter)
         {
-            return PostAsync("delete", new EmptyParameter());
+            return PostAsync("delete", parameter);
         }
     }
 }

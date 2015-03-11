@@ -73,9 +73,9 @@ namespace SendGrid
             return new SendGridWebApiV3Client(this);
         }
 
-        public SendGridMarketingEmailsApiClient CreateMarketingEmailsApiClient()
+        public MarketingEmailsApiClient CreateMarketingEmailsApiClient()
         {
-            return new SendGridMarketingEmailsApiClient(this);
+            return new MarketingEmailsApiClient(this);
         }
     }
 }

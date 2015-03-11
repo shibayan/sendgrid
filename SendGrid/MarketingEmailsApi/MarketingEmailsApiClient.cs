@@ -1,8 +1,8 @@
 ﻿namespace SendGrid.MarketingEmailsApi
 {
-    public class SendGridMarketingEmailsApiClient
+    public class MarketingEmailsApiClient
     {
-        public SendGridMarketingEmailsApiClient(SendGridAccount account)
+        public MarketingEmailsApiClient(SendGridAccount account)
         {
             _account = account;
         }

@@ -1,7 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 using SendGrid.Internal;
+using SendGrid.MarketingEmailsApi.Models;
 
 namespace SendGrid.MarketingEmailsApi
 {
@@ -12,24 +12,24 @@ namespace SendGrid.MarketingEmailsApi
         {
         }
 
-        public Task CreateAsync()
+        public Task CreateAsync(CreateCategoriesParameter parameter)
         {
-            throw new NotImplementedException();
+            return PostAsync("create", parameter);
         }
 
-        public Task AddAsync()
+        public Task AddAsync(AddCategoriesParameter parameter)
         {
-            throw new NotImplementedException();
+            return PostAsync("add", parameter);
         }
 
-        public Task RemoveAsync()
+        public Task RemoveAsync(RemoveCategoriesParameter parameter)
         {
-            throw new NotImplementedException();
+            return PostAsync("remove", parameter);
         }
 
-        public Task ListAsync()
+        public Task ListAsync(ListCategoriesParameter parameter)
         {
-            throw new NotImplementedException();
+            return PostAsync("list", parameter);
         }
     }
 }
