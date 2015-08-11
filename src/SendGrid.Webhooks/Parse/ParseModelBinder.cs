@@ -36,7 +36,8 @@ namespace SendGrid.Webhooks.Parse
 
         private static readonly Regex[] _mailAddressPattern =
         {
-            new Regex(@"^(.+) <(.+)>$", RegexOptions.Compiled | RegexOptions.ECMAScript)
+            new Regex(@"^(?<name>.+) <(?<address>.+)>$", RegexOptions.Compiled | RegexOptions.ECMAScript),
+            new Regex(@"^<(?<address>.+)>$", RegexOptions.Compiled | RegexOptions.ECMAScript)
         };
 
         private static MailAddress ParseMailAddress(string mailAddress)
@@ -58,8 +59,8 @@ namespace SendGrid.Webhooks.Parse
 
             return new MailAddress
             {
-                Name = match.Groups[1].Value,
-                Address = match.Groups[2].Value
+                Name = match.Groups["name"].Value,
+                Address = match.Groups["address"].Value
             };
         }
 

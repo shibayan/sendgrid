@@ -17,7 +17,7 @@ namespace SendGrid.Webhooks.Internal
             return (request.Unvalidated(key) ?? "").Split(separator);
         }
 
-        public static double AsInt(this HttpRequestBase request, string key)
+        public static int AsInt(this HttpRequestBase request, string key)
         {
             int result;
 
