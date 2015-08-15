@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid", "SendGrid\SendGrid.csproj", "{C250AC20-195A-44C8-88B3-E6215D460FF0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.Tests", "SendGrid.Tests\SendGrid.Tests.csproj", "{127E55CB-71A0-44FC-9F19-72FE72A0C7A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.Webhooks", "SendGrid.Webhooks\SendGrid.Webhooks.csproj", "{4C7D036A-47F1-4E59-960B-F067EB63CC2E}"
 EndProject
@@ -19,10 +17,6 @@ Global
 		{C250AC20-195A-44C8-88B3-E6215D460FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C250AC20-195A-44C8-88B3-E6215D460FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C250AC20-195A-44C8-88B3-E6215D460FF0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{127E55CB-71A0-44FC-9F19-72FE72A0C7A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{127E55CB-71A0-44FC-9F19-72FE72A0C7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{127E55CB-71A0-44FC-9F19-72FE72A0C7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{127E55CB-71A0-44FC-9F19-72FE72A0C7A3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4C7D036A-47F1-4E59-960B-F067EB63CC2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4C7D036A-47F1-4E59-960B-F067EB63CC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C7D036A-47F1-4E59-960B-F067EB63CC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
