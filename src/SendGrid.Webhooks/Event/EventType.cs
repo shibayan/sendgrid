@@ -1,4 +1,4 @@
-﻿namespace SendGrid.Webhooks.Event
+﻿namespace SendGrid.WebHooks.Event
 {
     public enum EventType
     {

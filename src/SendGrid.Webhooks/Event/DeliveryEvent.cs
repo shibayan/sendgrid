@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SendGrid.Webhooks.Event
+namespace SendGrid.WebHooks.Event
 {
     public class DeliveryEvent : EventBase
     {

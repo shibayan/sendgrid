@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace SendGrid.Webhooks.Event
+namespace SendGrid.WebHooks.Event
 {
     [ModelBinder(typeof(EventModelBinder))]
     public class EventInfo

@@ -2,7 +2,7 @@
 
 using Newtonsoft.Json;
 
-namespace SendGrid.Webhooks.Event
+namespace SendGrid.WebHooks.Event
 {
     public abstract class EventBase
     {

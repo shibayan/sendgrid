@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Mvc;
 
-namespace SendGrid.Webhooks.Parse
+namespace SendGrid.WebHooks.Parse
 {
     [ModelBinder(typeof(ParseModelBinder))] 
     public class ParseInfo

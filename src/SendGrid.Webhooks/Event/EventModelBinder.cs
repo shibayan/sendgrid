@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace SendGrid.Webhooks.Event
+namespace SendGrid.WebHooks.Event
 {
     public class EventModelBinder : IModelBinder
     {

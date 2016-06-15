@@ -3,7 +3,7 @@ using System.Web.Helpers;
 
 using Newtonsoft.Json;
 
-namespace SendGrid.Webhooks.Internal
+namespace SendGrid.WebHooks.Internal
 {
     internal static class HttpRequestExtension
     {

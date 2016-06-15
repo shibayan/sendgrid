@@ -3,9 +3,9 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 
-using SendGrid.Webhooks.Internal;
+using SendGrid.WebHooks.Internal;
 
-namespace SendGrid.Webhooks.Parse
+namespace SendGrid.WebHooks.Parse
 {
     public class ParseToAttribute : ActionMethodSelectorAttribute
     {

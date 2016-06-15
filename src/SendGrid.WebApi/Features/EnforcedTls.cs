@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-using SendGrid.WebApi.Features.Models;
+using SendGrid.WebApi.Features.Results;
 using SendGrid.WebApi.Internal;
 
 namespace SendGrid.WebApi.Features

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SendGrid.WebApi.Features.Models
+namespace SendGrid.WebApi.Features.Results
 {
     public class GetEnforcedTlsResult
     {
