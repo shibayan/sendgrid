@@ -41,6 +41,12 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\Alerts.cs" />
+    <Compile Include="Features\Blocks.cs" />
+    <Compile Include="Features\Bounces.cs" />
+    <Compile Include="Features\InvalidEmails.cs" />
+    <Compile Include="Features\Mail.cs" />
+    <Compile Include="Features\SpamReports.cs" />
     <Compile Include="Internal\HttpClientExtensions.cs" />
     <Compile Include="Internal\JsonContent.cs" />
     <Compile Include="Internal\WebApiHandler.cs" />
@@ -48,13 +54,13 @@
     <Compile Include="SendGridAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SendGridRequestException.cs" />
-    <Compile Include="Features\AdvancedSuppressionManager.cs" />
+    <Compile Include="Features\SuppressionManagement.cs" />
     <Compile Include="Features\Categories.cs" />
     <Compile Include="Features\EnforcedTls.cs" />
     <Compile Include="Features\IpManagement.cs" />
     <Compile Include="Features\Results\GetEnforcedTlsResult.cs" />
     <Compile Include="Features\Settings.cs" />
-    <Compile Include="Features\TemplateEngine.cs" />
+    <Compile Include="Features\TransactionalTemplates.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

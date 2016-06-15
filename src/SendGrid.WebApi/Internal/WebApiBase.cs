@@ -17,42 +17,42 @@ namespace SendGrid.WebApi.Internal
 
         private readonly SendGridAccount _account;
 
-        protected Task GetAsync(string path, object parameters = null)
+        protected Task GetAsyncCore(string path, object parameters = null)
         {
-            return GetAsync<object>(path, parameters);
+            return GetAsyncCore<object>(path, parameters);
         }
 
-        protected Task<TResult> GetAsync<TResult>(string path, object parameters = null)
+        protected Task<TResult> GetAsyncCore<TResult>(string path, object parameters = null)
         {
             return ExecuteAsync<TResult>(x => x.GetAsync(FormatRequestUri(path)));
         }
 
-        protected Task PostAsync(string path, object parameters)
+        protected Task PostAsyncCore(string path, object parameters)
         {
-            return PostAsync<object>(path, parameters);
+            return PostAsyncCore<object>(path, parameters);
         }
 
-        protected Task<TResult> PostAsync<TResult>(string path, object parameters)
+        protected Task<TResult> PostAsyncCore<TResult>(string path, object parameters)
         {
             return ExecuteAsync<TResult>(x => x.PostAsync(FormatRequestUri(path), new JsonContent(parameters)));
         }
 
-        protected Task DeleteAsync(string path, object parameters = null)
+        protected Task DeleteAsyncCore(string path, object parameters = null)
         {
-            return DeleteAsync<object>(path, parameters);
+            return DeleteAsyncCore<object>(path, parameters);
         }
 
-        protected Task<TResult> DeleteAsync<TResult>(string path, object parameters = null)
+        protected Task<TResult> DeleteAsyncCore<TResult>(string path, object parameters = null)
         {
             return ExecuteAsync<TResult>(x => x.DeleteAsync(FormatRequestUri(path)));
         }
 
-        protected Task PatchAsync(string path, object parameters)
+        protected Task PatchAsyncCore(string path, object parameters)
         {
-            return PatchAsync<object>(path, parameters);
+            return PatchAsyncCore<object>(path, parameters);
         }
 
-        protected Task<TResult> PatchAsync<TResult>(string path, object parameters)
+        protected Task<TResult> PatchAsyncCore<TResult>(string path, object parameters)
         {
             return ExecuteAsync<TResult>(x => x.PatchAsync(FormatRequestUri(path), new JsonContent(parameters)));
         }

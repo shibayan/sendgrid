@@ -31,14 +31,26 @@ namespace SendGrid.WebApi
 
         #endregion
 
-        public AdvancedSuppressionManager AdvancedSuppressionManage => new AdvancedSuppressionManager(this);
+        public Alerts Alerts => new Alerts(this);
+
+        public Blocks Blocks => new Blocks(this);
+
+        public Bounces Bounces => new Bounces(this);
+
+        public InvalidEmails InvalidEmails => new InvalidEmails(this);
+
+        public SpamReports SpamReports => new SpamReports(this);
 
         public Categories Categories => new Categories(this);
 
         public IpManagement IpManagement => new IpManagement(this);
 
+        public Mail Mail => new Mail(this);
+
         public Settings Settings => new Settings(this);
 
-        public TemplateEngine TemplateEngine => new TemplateEngine(this);
+        public SuppressionManagement SuppressionManagement => new SuppressionManagement(this);
+
+        public TransactionalTemplates TransactionalTemplates => new TransactionalTemplates(this);
     }
 }

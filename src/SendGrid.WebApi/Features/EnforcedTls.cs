@@ -14,7 +14,7 @@ namespace SendGrid.WebApi.Features
 
         public Task<GetEnforcedTlsResult> GetAsync()
         {
-            return GetAsync<GetEnforcedTlsResult>("user/settings/enforced_tls");
+            return GetAsyncCore<GetEnforcedTlsResult>("user/settings/enforced_tls");
         }
     }
 }

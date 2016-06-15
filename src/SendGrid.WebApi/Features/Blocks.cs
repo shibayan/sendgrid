@@ -2,9 +2,9 @@
 
 namespace SendGrid.WebApi.Features
 {
-    public class AdvancedSuppressionManager : WebApiBase
+    public class Blocks : WebApiBase
     {
-        internal AdvancedSuppressionManager(SendGridAccount account)
+        public Blocks(SendGridAccount account)
             : base(account)
         {
         }
