@@ -52,7 +52,7 @@
     <Compile Include="Features\Categories.cs" />
     <Compile Include="Features\EnforcedTls.cs" />
     <Compile Include="Features\IpManagement.cs" />
-    <Compile Include="Features\Results\EnforcedTlsResult.cs" />
+    <Compile Include="Features\Results\GetEnforcedTlsResult.cs" />
     <Compile Include="Features\Settings.cs" />
     <Compile Include="Features\TemplateEngine.cs" />
   </ItemGroup>
