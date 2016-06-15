@@ -7,10 +7,11 @@
     <ProjectGuid>{4C7D036A-47F1-4E59-960B-F067EB63CC2E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SendGrid.Webhooks</RootNamespace>
-    <AssemblyName>SendGrid.Webhooks</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>SendGrid.WebHooks</RootNamespace>
+    <AssemblyName>SendGrid.WebHooks</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

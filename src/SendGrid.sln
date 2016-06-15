@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid", "SendGrid\SendGrid.csproj", "{C250AC20-195A-44C8-88B3-E6215D460FF0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.WebApi", "SendGrid.WebApi\SendGrid.WebApi.csproj", "{C250AC20-195A-44C8-88B3-E6215D460FF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.Webhooks", "SendGrid.Webhooks\SendGrid.Webhooks.csproj", "{4C7D036A-47F1-4E59-960B-F067EB63CC2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.WebHooks", "SendGrid.Webhooks\SendGrid.WebHooks.csproj", "{4C7D036A-47F1-4E59-960B-F067EB63CC2E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.PowerShell", "SendGrid.PowerShell\SendGrid.PowerShell.csproj", "{73DD5CFA-E12A-4F4B-B65F-B43F77FF6299}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.Smtp", "SendGrid.Smtp\SendGrid.Smtp.csproj", "{E5A2D0B8-2766-4381-BC45-5D98E11E447E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{73DD5CFA-E12A-4F4B-B65F-B43F77FF6299}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73DD5CFA-E12A-4F4B-B65F-B43F77FF6299}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73DD5CFA-E12A-4F4B-B65F-B43F77FF6299}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5A2D0B8-2766-4381-BC45-5D98E11E447E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A2D0B8-2766-4381-BC45-5D98E11E447E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A2D0B8-2766-4381-BC45-5D98E11E447E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A2D0B8-2766-4381-BC45-5D98E11E447E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
