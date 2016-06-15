@@ -7,8 +7,8 @@
     <ProjectGuid>{E5A2D0B8-2766-4381-BC45-5D98E11E447E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SendGrid.Smtp</RootNamespace>
-    <AssemblyName>SendGrid.Smtp</AssemblyName>
+    <RootNamespace>SendGrid.SmtpApi</RootNamespace>
+    <AssemblyName>SendGrid.SmtpApi</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

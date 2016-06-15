@@ -4,7 +4,7 @@ using System.Linq;
 
 using Newtonsoft.Json;
 
-namespace SendGrid.Smtp
+namespace SendGrid.SmtpApi
 {
     public sealed class SmtpHeader
     {

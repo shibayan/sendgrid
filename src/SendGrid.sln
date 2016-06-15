@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.WebHooks", "SendGr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.PowerShell", "SendGrid.PowerShell\SendGrid.PowerShell.csproj", "{73DD5CFA-E12A-4F4B-B65F-B43F77FF6299}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.Smtp", "SendGrid.Smtp\SendGrid.Smtp.csproj", "{E5A2D0B8-2766-4381-BC45-5D98E11E447E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.SmtpApi", "SendGrid.SmtpApi\SendGrid.SmtpApi.csproj", "{E5A2D0B8-2766-4381-BC45-5D98E11E447E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

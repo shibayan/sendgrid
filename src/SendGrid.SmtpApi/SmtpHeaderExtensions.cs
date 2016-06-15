@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SendGrid.Smtp
+namespace SendGrid.SmtpApi
 {
     public static class SmtpHeaderExtensions
     {
