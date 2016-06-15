@@ -1,19 +1,12 @@
-SendGridSharp
+SendGrid
 =============
-
-SendGridSharp - Yet Another SendGrid API C# Library
 
 ## Create Account ##
 
 ```c#
-var account = SendGridAccount.Create("API_USER", "API_KEY");
+var account = SendGridAccount.Create("API_KEY");
 ```
 
-or
-
-```c#
-var account = SendGridAccount.Parse("ApiUser=API_USER;ApiKey=API_KEY");
-```
 
 ## API Requests ##
 
@@ -40,7 +33,5 @@ await account.Mail.SendAsync(sendMail);
 ## Support APIs ##
 
 - SMTP API (X-SMTP API)
-- Web API
-- Web API v3 (partial)
-- Marketing Emails API (future)
+- Web API v3
 - Webhooks (Inbound Parse / Event v3)
