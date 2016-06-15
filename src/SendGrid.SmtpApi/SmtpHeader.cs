@@ -8,6 +8,13 @@ namespace SendGrid.SmtpApi
 {
     public sealed class SmtpHeader
     {
+        private static readonly DateTime _unixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        private static readonly JsonSerializerSettings _settings = new JsonSerializerSettings
+        {
+            StringEscapeHandling = StringEscapeHandling.EscapeNonAscii,
+            NullValueHandling = NullValueHandling.Ignore
+        };
+
         private readonly List<string> _to = new List<string>();
         private readonly List<DateTimeOffset> _sendAt = new List<DateTimeOffset>();
         private readonly List<string> _categories = new List<string>();
@@ -15,13 +22,6 @@ namespace SendGrid.SmtpApi
         private readonly Dictionary<string, string> _uniqueArgs = new Dictionary<string, string>();
         private readonly Dictionary<string, string> _sections = new Dictionary<string, string>();
         private readonly Dictionary<string, object> _filters = new Dictionary<string, object>();
-
-        private static readonly DateTime _unixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-        private static readonly JsonSerializerSettings _settings = new JsonSerializerSettings
-        {
-            StringEscapeHandling = StringEscapeHandling.EscapeNonAscii,
-            NullValueHandling = NullValueHandling.Ignore
-        };
 
         public void AddTo(params string[] addresses)
         {
