@@ -5,7 +5,7 @@ namespace SendGrid.Internal
 {
     public abstract class ParameterBase
     {
-        protected virtual bool UseMultipart { get { return false; } }
+        protected virtual bool UseMultipart => false;
 
         internal QueryStringCollection ToQueryString()
         {

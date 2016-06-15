@@ -9,9 +9,6 @@
 
         private readonly SendGridAccount _account;
 
-        public EnforcedTls EnforcedTls
-        {
-            get { return new EnforcedTls(_account); }
-        }
+        public EnforcedTls EnforcedTls => new EnforcedTls(_account);
     }
 }

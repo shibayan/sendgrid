@@ -15,7 +15,7 @@ namespace SendGrid.Internal
         {
             if (queryString == null)
             {
-                throw new ArgumentNullException("queryString");
+                throw new ArgumentNullException(nameof(queryString));
             }
 
             foreach (var item in queryString.TrimStart('?').Split('&').Select(x => x.Split('=')))
@@ -40,7 +40,7 @@ namespace SendGrid.Internal
 
             foreach (var item in this)
             {
-                result.AppendFormat("{0}={1}&", item.Key, Uri.EscapeDataString(item.Value));
+                result.Append($"{item.Key}={Uri.EscapeDataString(item.Value)}&");
             }
 
             return "?" + result.ToString(0, result.Length - 1);

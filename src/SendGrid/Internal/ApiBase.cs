@@ -17,7 +17,7 @@ namespace SendGrid.Internal
         {
             if (account == null)
             {
-                throw new ArgumentNullException("account");
+                throw new ArgumentNullException(nameof(account));
             }
 
             _account = account;
@@ -38,12 +38,12 @@ namespace SendGrid.Internal
         {
             if (requestUri == null)
             {
-                throw new ArgumentNullException("requestUri");
+                throw new ArgumentNullException(nameof(requestUri));
             }
 
             if (parameter == null)
             {
-                throw new ArgumentNullException("parameter");
+                throw new ArgumentNullException(nameof(parameter));
             }
 
             return ExecuteAsync<TResult>(x => x.GetAsync(requestUri + parameter.ToQueryString()));
@@ -58,12 +58,12 @@ namespace SendGrid.Internal
         {
             if (requestUri == null)
             {
-                throw new ArgumentNullException("requestUri");
+                throw new ArgumentNullException(nameof(requestUri));
             }
 
             if (parameter == null)
             {
-                throw new ArgumentNullException("parameter");
+                throw new ArgumentNullException(nameof(parameter));
             }
 
             return ExecuteAsync<TResult>(x => x.PostAsync(requestUri, parameter.ToHttpContent()));
@@ -78,12 +78,12 @@ namespace SendGrid.Internal
         {
             if (requestUri == null)
             {
-                throw new ArgumentNullException("requestUri");
+                throw new ArgumentNullException(nameof(requestUri));
             }
 
             if (parameter == null)
             {
-                throw new ArgumentNullException("parameter");
+                throw new ArgumentNullException(nameof(parameter));
             }
 
             return ExecuteAsync<TResult>(x => x.PutAsync(requestUri, parameter.ToHttpContent()));
@@ -98,12 +98,12 @@ namespace SendGrid.Internal
         {
             if (requestUri == null)
             {
-                throw new ArgumentNullException("requestUri");
+                throw new ArgumentNullException(nameof(requestUri));
             }
 
             if (parameter == null)
             {
-                throw new ArgumentNullException("parameter");
+                throw new ArgumentNullException(nameof(parameter));
             }
 
             return ExecuteAsync<TResult>(x => x.DeleteAsync(requestUri + parameter.ToQueryString()));
@@ -118,12 +118,12 @@ namespace SendGrid.Internal
         {
             if (requestUri == null)
             {
-                throw new ArgumentNullException("requestUri");
+                throw new ArgumentNullException(nameof(requestUri));
             }
 
             if (parameter == null)
             {
-                throw new ArgumentNullException("parameter");
+                throw new ArgumentNullException(nameof(parameter));
             }
 
             return ExecuteAsync<TResult>(x => x.PatchAsync(requestUri, parameter.ToHttpContent()));

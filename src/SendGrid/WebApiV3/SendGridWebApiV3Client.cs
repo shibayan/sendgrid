@@ -11,30 +11,15 @@
 
         #region Web API v3
 
-        public AdvancedSuppressionManager AdvancedSuppressionManage
-        {
-            get { return new AdvancedSuppressionManager(_account); }
-        }
+        public AdvancedSuppressionManager AdvancedSuppressionManage => new AdvancedSuppressionManager(_account);
 
-        public Categories Categories
-        {
-            get { return new Categories(_account); }
-        }
+        public Categories Categories => new Categories(_account);
 
-        public IpManagement IpManagement
-        {
-            get { return new IpManagement(_account); }
-        }
+        public IpManagement IpManagement => new IpManagement(_account);
 
-        public Settings Settings
-        {
-            get { return new Settings(_account); }
-        }
+        public Settings Settings => new Settings(_account);
 
-        public TemplateEngine TemplateEngine
-        {
-            get { return new TemplateEngine(_account); }
-        }
+        public TemplateEngine TemplateEngine => new TemplateEngine(_account);
 
         #endregion
     }

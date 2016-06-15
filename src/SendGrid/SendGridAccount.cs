@@ -13,32 +13,23 @@ namespace SendGrid
         {
             if (apiUser == null)
             {
-                throw new ArgumentNullException("apiUser");
+                throw new ArgumentNullException(nameof(apiUser));
             }
 
             if (apiKey == null)
             {
-                throw new ArgumentNullException("apiKey");
+                throw new ArgumentNullException(nameof(apiKey));
             }
 
-            _apiUser = apiUser;
-            _apiKey = apiKey;
+            ApiUser = apiUser;
+            ApiKey = apiKey;
         }
-
-        private readonly string _apiUser;
-        private readonly string _apiKey;
 
         #region Internal
 
-        internal string ApiUser
-        {
-            get { return _apiUser; }
-        }
+        internal string ApiUser { get; }
 
-        internal string ApiKey
-        {
-            get { return _apiKey; }
-        }
+        internal string ApiKey { get; }
 
         #endregion
 
