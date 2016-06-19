@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.WebApi", "SendGrid.WebApi\SendGrid.WebApi.csproj", "{C250AC20-195A-44C8-88B3-E6215D460FF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.WebHooks", "SendGrid.Webhooks\SendGrid.WebHooks.csproj", "{4C7D036A-47F1-4E59-960B-F067EB63CC2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.WebHooks", "SendGrid.WebHooks\SendGrid.WebHooks.csproj", "{4C7D036A-47F1-4E59-960B-F067EB63CC2E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid.PowerShell", "SendGrid.PowerShell\SendGrid.PowerShell.csproj", "{73DD5CFA-E12A-4F4B-B65F-B43F77FF6299}"
 EndProject
