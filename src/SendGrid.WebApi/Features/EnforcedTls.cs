@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 
-using SendGrid.WebApi.Features.Results;
 using SendGrid.WebApi.Internal;
+using SendGrid.WebApi.Results;
 
 namespace SendGrid.WebApi.Features
 {

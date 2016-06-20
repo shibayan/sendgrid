@@ -41,13 +41,21 @@ namespace SendGrid.WebApi
 
         public SpamReports SpamReports => new SpamReports(this);
 
+        public SubUsers SubUsers => new SubUsers(this);
+
+        public Users Users => new Users(this);
+
         public Categories Categories => new Categories(this);
 
         public IpManagement IpManagement => new IpManagement(this);
 
+        public ApiKeys ApiKeys => new ApiKeys(this);
+
         public Mail Mail => new Mail(this);
 
         public Settings Settings => new Settings(this);
+
+        public Stats Stats => new Stats(this);
 
         public SuppressionManagement SuppressionManagement => new SuppressionManagement(this);
 

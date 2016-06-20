@@ -72,7 +72,7 @@ namespace SendGrid.WebApi.Internal
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new SendGridRequestException();
+                throw new RequestException();
             }
 
             return JsonConvert.DeserializeObject<TResult>(body);

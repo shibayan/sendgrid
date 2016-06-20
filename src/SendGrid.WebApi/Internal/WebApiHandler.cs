@@ -17,6 +17,9 @@ namespace SendGrid.WebApi.Internal
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
+            request.Headers.Accept.Clear();
+            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _account.ApiKey);
 
             return await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
