@@ -2,9 +2,9 @@
 
 namespace SendGrid.WebApi.Features
 {
-    public class SuppressionManagement : WebApiBase
+    public class SuppressionManagementFeature : WebApiBase
     {
-        internal SuppressionManagement(Account account)
+        internal SuppressionManagementFeature(Account account)
             : base(account)
         {
         }

@@ -2,9 +2,9 @@
 
 namespace SendGrid.WebApi.Features
 {
-    public class Mail : WebApiBase
+    public class InvalidEmailsFeature : WebApiBase
     {
-        public Mail(Account account)
+        public InvalidEmailsFeature(Account account)
             : base(account)
         {
         }

@@ -2,9 +2,9 @@
 
 namespace SendGrid.WebApi.Features
 {
-    public class IpManagement : WebApiBase
+    public class ApiKeysFeature : WebApiBase
     {
-        internal IpManagement(Account account)
+        public ApiKeysFeature(Account account)
             : base(account)
         {
         }

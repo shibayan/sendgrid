@@ -2,9 +2,9 @@
 
 namespace SendGrid.WebApi.Features
 {
-    public class TransactionalTemplates
+    public class TransactionalTemplatesFeature
     {
-        internal TransactionalTemplates(Account account)
+        internal TransactionalTemplatesFeature(Account account)
         {
             _account = account;
         }

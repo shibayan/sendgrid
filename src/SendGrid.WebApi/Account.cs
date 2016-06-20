@@ -31,34 +31,34 @@ namespace SendGrid.WebApi
 
         #endregion
 
-        public Alerts Alerts => new Alerts(this);
+        public AlertsFeature Alerts => new AlertsFeature(this);
 
-        public Blocks Blocks => new Blocks(this);
+        public BlocksFeature Blocks => new BlocksFeature(this);
 
-        public Bounces Bounces => new Bounces(this);
+        public BouncesFeature Bounces => new BouncesFeature(this);
 
-        public InvalidEmails InvalidEmails => new InvalidEmails(this);
+        public InvalidEmailsFeature InvalidEmails => new InvalidEmailsFeature(this);
 
-        public SpamReports SpamReports => new SpamReports(this);
+        public SpamReportsFeature SpamReports => new SpamReportsFeature(this);
 
-        public SubUsers SubUsers => new SubUsers(this);
+        public SubUsersFeature SubUsers => new SubUsersFeature(this);
 
-        public Users Users => new Users(this);
+        public UsersFeature Users => new UsersFeature(this);
 
-        public Categories Categories => new Categories(this);
+        public CategoriesFeature Categories => new CategoriesFeature(this);
 
-        public IpManagement IpManagement => new IpManagement(this);
+        public IpManagementFeature IpManagement => new IpManagementFeature(this);
 
-        public ApiKeys ApiKeys => new ApiKeys(this);
+        public ApiKeysFeature ApiKeys => new ApiKeysFeature(this);
 
-        public Mail Mail => new Mail(this);
+        public MailFeature Mail => new MailFeature(this);
 
-        public Settings Settings => new Settings(this);
+        public SettingsFeature Settings => new SettingsFeature(this);
 
-        public Stats Stats => new Stats(this);
+        public StatsFeature Stats => new StatsFeature(this);
 
-        public SuppressionManagement SuppressionManagement => new SuppressionManagement(this);
+        public SuppressionManagementFeature SuppressionManagement => new SuppressionManagementFeature(this);
 
-        public TransactionalTemplates TransactionalTemplates => new TransactionalTemplates(this);
+        public TransactionalTemplatesFeature TransactionalTemplates => new TransactionalTemplatesFeature(this);
     }
 }

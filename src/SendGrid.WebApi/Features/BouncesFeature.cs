@@ -4,9 +4,9 @@ using SendGrid.WebApi.Internal;
 
 namespace SendGrid.WebApi.Features
 {
-    public class Bounces : WebApiBase
+    public class BouncesFeature : WebApiBase
     {
-        public Bounces(Account account)
+        public BouncesFeature(Account account)
             : base(account)
         {
         }

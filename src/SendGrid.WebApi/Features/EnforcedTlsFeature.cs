@@ -5,9 +5,9 @@ using SendGrid.WebApi.Results;
 
 namespace SendGrid.WebApi.Features
 {
-    public class EnforcedTls : WebApiBase
+    public class EnforcedTlsFeature : WebApiBase
     {
-        public EnforcedTls(Account account)
+        public EnforcedTlsFeature(Account account)
             : base(account)
         {
         }

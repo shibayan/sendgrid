@@ -2,9 +2,9 @@
 
 namespace SendGrid.WebApi.Features
 {
-    public class Blocks : WebApiBase
+    public class MailFeature : WebApiBase
     {
-        public Blocks(Account account)
+        public MailFeature(Account account)
             : base(account)
         {
         }

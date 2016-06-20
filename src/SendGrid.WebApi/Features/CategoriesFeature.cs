@@ -2,9 +2,9 @@
 
 namespace SendGrid.WebApi.Features
 {
-    public class Alerts : WebApiBase
+    public class CategoriesFeature : WebApiBase
     {
-        public Alerts(Account account)
+        internal CategoriesFeature(Account account)
             : base(account)
         {
         }

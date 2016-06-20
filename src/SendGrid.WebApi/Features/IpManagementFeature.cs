@@ -2,9 +2,9 @@
 
 namespace SendGrid.WebApi.Features
 {
-    public class Stats : WebApiBase
+    public class IpManagementFeature : WebApiBase
     {
-        public Stats(Account account)
+        internal IpManagementFeature(Account account)
             : base(account)
         {
         }
