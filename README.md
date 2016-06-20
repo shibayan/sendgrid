@@ -4,7 +4,7 @@ SendGrid C# Client
 ## Create Account
 
 ```c#
-var account = SendGridAccount.Create("API_KEY");
+var account = Account.Create("API_KEY");
 ```
 
 
