@@ -4,9 +4,9 @@ using SendGrid.WebApi.Features;
 
 namespace SendGrid.WebApi
 {
-    public sealed class SendGridAccount
+    public sealed class Account
     {
-        private SendGridAccount(string apiKey)
+        private Account(string apiKey)
         {
             if (apiKey == null)
             {
@@ -24,9 +24,9 @@ namespace SendGrid.WebApi
 
         #region Public Methods
 
-        public static SendGridAccount Create(string apiKey)
+        public static Account Create(string apiKey)
         {
-            return new SendGridAccount(apiKey);
+            return new Account(apiKey);
         }
 
         #endregion
