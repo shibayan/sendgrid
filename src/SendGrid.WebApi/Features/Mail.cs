@@ -4,7 +4,7 @@ namespace SendGrid.WebApi.Features
 {
     public class Mail : WebApiBase
     {
-        public Mail(SendGridAccount account)
+        public Mail(Account account)
             : base(account)
         {
         }

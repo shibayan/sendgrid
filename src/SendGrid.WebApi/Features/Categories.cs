@@ -4,7 +4,7 @@ namespace SendGrid.WebApi.Features
 {
     public class Categories : WebApiBase
     {
-        internal Categories(SendGridAccount account)
+        internal Categories(Account account)
             : base(account)
         {
         }

@@ -4,7 +4,7 @@ namespace SendGrid.WebApi.Features
 {
     public class Blocks : WebApiBase
     {
-        public Blocks(SendGridAccount account)
+        public Blocks(Account account)
             : base(account)
         {
         }

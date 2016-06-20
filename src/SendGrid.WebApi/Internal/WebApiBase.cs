@@ -8,14 +8,14 @@ namespace SendGrid.WebApi.Internal
 {
     public class WebApiBase
     {
-        public WebApiBase(SendGridAccount account)
+        public WebApiBase(Account account)
         {
             _account = account;
         }
 
         private const string Endpoint = "https://api.sendgrid.com/v3/{0}";
 
-        private readonly SendGridAccount _account;
+        private readonly Account _account;
 
         protected Task GetAsyncCore(string path, object parameters = null)
         {

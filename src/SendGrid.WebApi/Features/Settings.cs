@@ -2,12 +2,12 @@
 {
     public class Settings
     {
-        internal Settings(SendGridAccount account)
+        internal Settings(Account account)
         {
             _account = account;
         }
 
-        private readonly SendGridAccount _account;
+        private readonly Account _account;
 
         public EnforcedTls EnforcedTls => new EnforcedTls(_account);
     }

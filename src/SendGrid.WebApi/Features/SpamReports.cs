@@ -4,7 +4,7 @@ namespace SendGrid.WebApi.Features
 {
     public class SpamReports : WebApiBase
     {
-        public SpamReports(SendGridAccount account)
+        public SpamReports(Account account)
             : base(account)
         {
         }

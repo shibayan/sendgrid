@@ -4,7 +4,7 @@ namespace SendGrid.WebApi.Features
 {
     public class InvalidEmails : WebApiBase
     {
-        public InvalidEmails(SendGridAccount account)
+        public InvalidEmails(Account account)
             : base(account)
         {
         }

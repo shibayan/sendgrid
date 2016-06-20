@@ -4,12 +4,12 @@ namespace SendGrid.WebApi.Features
 {
     public class TransactionalTemplates
     {
-        internal TransactionalTemplates(SendGridAccount account)
+        internal TransactionalTemplates(Account account)
         {
             _account = account;
         }
 
-        private readonly SendGridAccount _account;
+        private readonly Account _account;
 
         public object Templates
         {

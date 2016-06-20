@@ -7,7 +7,7 @@ namespace SendGrid.WebApi.Features
 {
     public class EnforcedTls : WebApiBase
     {
-        public EnforcedTls(SendGridAccount account)
+        public EnforcedTls(Account account)
             : base(account)
         {
         }

@@ -4,7 +4,7 @@ namespace SendGrid.WebApi.Features
 {
     public class Alerts : WebApiBase
     {
-        public Alerts(SendGridAccount account)
+        public Alerts(Account account)
             : base(account)
         {
         }

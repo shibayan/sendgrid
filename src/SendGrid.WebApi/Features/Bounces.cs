@@ -6,7 +6,7 @@ namespace SendGrid.WebApi.Features
 {
     public class Bounces : WebApiBase
     {
-        public Bounces(SendGridAccount account)
+        public Bounces(Account account)
             : base(account)
         {
         }

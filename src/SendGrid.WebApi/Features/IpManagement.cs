@@ -4,7 +4,7 @@ namespace SendGrid.WebApi.Features
 {
     public class IpManagement : WebApiBase
     {
-        internal IpManagement(SendGridAccount account)
+        internal IpManagement(Account account)
             : base(account)
         {
         }

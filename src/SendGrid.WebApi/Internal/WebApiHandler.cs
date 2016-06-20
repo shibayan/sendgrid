@@ -7,13 +7,13 @@ namespace SendGrid.WebApi.Internal
 {
     internal class WebApiHandler : DelegatingHandler
     {
-        internal WebApiHandler(SendGridAccount account)
+        internal WebApiHandler(Account account)
             : base(new HttpClientHandler())
         {
             _account = account;
         }
 
-        private readonly SendGridAccount _account;
+        private readonly Account _account;
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
