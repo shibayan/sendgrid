@@ -1,6 +1,8 @@
 SendGrid C# Client
 =============
 
+Yet Another SendGrid Client for C#
+
 ## Create Account
 
 ```c#
